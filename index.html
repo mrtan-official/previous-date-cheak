@@ -24,7 +24,6 @@
       position: relative;
     }
 
-    /* Hacking-style subtle background grid */
     body::before {
       content: '';
       position: absolute;
@@ -56,7 +55,6 @@
       z-index: 1;
     }
 
-    /* Header + Image */
     .header {
       display: flex;
       align-items: center;
@@ -72,12 +70,6 @@
       object-fit: cover;
       border: 2px solid rgba(0,255,247,0.5);
       box-shadow: 0 0 15px #00fff7;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .header img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00fff7;
     }
 
     .header h2 {
@@ -123,27 +115,12 @@
       transition: all 0.3s ease;
       width: 100%;
       margin-top: 10px;
-      position: relative;
-      overflow: hidden;
     }
 
     button:hover {
       background: #0ff;
       box-shadow: 0 0 20px #00fff7;
       transform: translateY(-2px);
-    }
-
-    button:active {
-      transform: translateY(0);
-    }
-
-    button.clicked {
-      animation: buttonPulse 0.6s ease;
-    }
-
-    @keyframes buttonPulse {
-      0%, 100% { box-shadow: 0 0 10px #00fff7; }
-      50% { box-shadow: 0 0 30px #00fff7, 0 0 50px #00fff7; transform: scale(1.05); }
     }
 
     #result {
@@ -183,6 +160,7 @@
       25% { transform: translateX(-10px); }
       75% { transform: translateX(10px); }
     }
+
   </style>
 </head>
 <body>
@@ -211,7 +189,6 @@
       const dateStr = document.getElementById('dateInput').value.trim();
       const daysBack = parseInt(document.getElementById('daysBack').value);
       const resultBox = document.getElementById('result');
-      const button = document.getElementById('calcBtn');
 
       const datePattern = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
       const match = dateStr.match(datePattern);
@@ -239,9 +216,6 @@
       const newDay = inputDate.getDate();
       const newMonth = inputDate.getMonth() + 1;
       const newYear = inputDate.getFullYear();
-
-      button.classList.add("clicked");
-      setTimeout(() => { button.classList.remove("clicked"); }, 600);
 
       resultBox.innerHTML = `
         <div><span class="highlight">🕒 New Date:</span></div>
