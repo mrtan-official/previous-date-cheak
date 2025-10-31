@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TimeMaster Pro | Date Calculator</title>
+  <title>Date Calculator</title>
   
   <!-- Favicon -->
   <link rel="icon" href="https://i.postimg.cc/1zkqjC1k/mrtan.png" type="image/png">
@@ -44,7 +44,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
       overflow: hidden;
       position: relative;
     }
@@ -84,19 +84,19 @@
     }
 
     .nebula-cloud:nth-child(1) {
-      width: 150px;
-      height: 150px;
-      top: -30px;
-      left: -30px;
+      width: 100px;
+      height: 100px;
+      top: -15px;
+      left: -15px;
       background: var(--primary);
       animation-duration: 30s;
     }
 
     .nebula-cloud:nth-child(2) {
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
       top: 60%;
-      right: -20px;
+      right: -10px;
       background: var(--secondary);
       animation-duration: 25s;
       animation-delay: 5s;
@@ -108,7 +108,7 @@
         opacity: 0.1;
       }
       50% {
-        transform: translate(40px, -20px) rotate(180deg) scale(1.05);
+        transform: translate(25px, -10px) rotate(180deg) scale(1.05);
         opacity: 0.2;
       }
     }
@@ -188,15 +188,15 @@
     /* Compact Container */
     .container {
       background: rgba(1, 22, 39, 0.9);
-      padding: 25px;
-      border-radius: 18px;
+      padding: 18px;
+      border-radius: 14px;
       border: 1px solid rgba(0, 242, 254, 0.2);
       box-shadow: 
-        0 0 20px rgba(0, 242, 254, 0.1),
-        0 0 40px rgba(255, 42, 109, 0.05),
+        0 0 12px rgba(0, 242, 254, 0.1),
+        0 0 25px rgba(255, 42, 109, 0.05),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
       width: 100%;
-      max-width: 380px;
+      max-width: 320px;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -212,7 +212,7 @@
       right: -2px;
       bottom: -2px;
       background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-      border-radius: 20px;
+      border-radius: 16px;
       z-index: -1;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -223,10 +223,10 @@
     }
 
     .container:hover {
-      transform: translateY(-3px) scale(1.005);
+      transform: translateY(-2px) scale(1.005);
       box-shadow: 
-        0 0 25px rgba(0, 242, 254, 0.15),
-        0 0 50px rgba(255, 42, 109, 0.08),
+        0 0 16px rgba(0, 242, 254, 0.15),
+        0 0 35px rgba(255, 42, 109, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
@@ -234,22 +234,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      margin-bottom: 25px;
+      gap: 10px;
+      margin-bottom: 18px;
       position: relative;
     }
 
     .header::after {
       content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 150px;
+      width: 120px;
       height: 1px;
       background: var(--gradient-1);
       border-radius: 2px;
-      box-shadow: 0 0 5px var(--primary);
+      box-shadow: 0 0 3px var(--primary);
     }
 
     .logo-container {
@@ -261,11 +261,11 @@
 
     .logo-glow {
       position: absolute;
-      width: 70px;
-      height: 70px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--gradient-1);
-      filter: blur(12px);
+      filter: blur(8px);
       opacity: 0.4;
       animation: logoPulse 3s ease-in-out infinite;
     }
@@ -282,14 +282,14 @@
     }
 
     .header img {
-      width: 60px;
-      height: 60px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid rgba(255, 255, 255, 0.8);
       box-shadow: 
-        0 0 15px var(--primary),
-        0 0 30px rgba(0, 242, 254, 0.15);
+        0 0 10px var(--primary),
+        0 0 20px rgba(0, 242, 254, 0.15);
       transition: all 0.3s ease;
       position: relative;
       z-index: 2;
@@ -298,47 +298,40 @@
     .header img:hover {
       transform: scale(1.03) rotate(2deg);
       box-shadow: 
-        0 0 18px var(--primary),
-        0 0 35px rgba(0, 242, 254, 0.2);
+        0 0 12px var(--primary),
+        0 0 25px rgba(0, 242, 254, 0.2);
     }
 
     .header-content h1 {
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 800;
       background: var(--gradient-1);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
-      margin-bottom: 6px;
-      letter-spacing: 0.8px;
-    }
-
-    .header-content p {
-      font-size: 14px;
-      color: var(--text-secondary);
-      font-weight: 300;
-      letter-spacing: 0.4px;
+      text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+      margin-bottom: 3px;
+      letter-spacing: 0.5px;
     }
 
     .input-group {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       text-align: left;
     }
 
     .input-label {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-      font-size: 14px;
+      gap: 6px;
+      margin-bottom: 6px;
+      font-size: 12px;
       color: var(--text);
       font-weight: 600;
     }
 
     .input-label .material-icons {
       color: var(--primary);
-      font-size: 18px;
+      font-size: 15px;
     }
 
     .input-container {
@@ -347,12 +340,12 @@
 
     .input-field {
       width: 100%;
-      padding: 14px 16px 14px 45px;
-      border-radius: 10px;
+      padding: 10px 12px 10px 36px;
+      border-radius: 7px;
       border: 2px solid rgba(0, 242, 254, 0.15);
       background: rgba(0, 10, 20, 0.6);
       color: var(--text);
-      font-size: 14px;
+      font-size: 12px;
       outline: none;
       transition: all 0.3s ease;
       font-family: inherit;
@@ -361,17 +354,17 @@
     .input-field:focus {
       border-color: var(--primary);
       background: rgba(0, 20, 40, 0.7);
-      box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
+      box-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
       transform: translateY(-1px);
     }
 
     .input-icon {
       position: absolute;
-      left: 16px;
+      left: 12px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--primary);
-      font-size: 18px;
+      font-size: 15px;
       transition: all 0.3s ease;
     }
 
@@ -381,27 +374,27 @@
     }
 
     .hint {
-      font-size: 12px;
+      font-size: 10px;
       color: var(--text-secondary);
-      margin-top: 6px;
+      margin-top: 4px;
       font-style: italic;
     }
 
     .calculate-btn {
       background: var(--gradient-1);
       color: #000;
-      padding: 15px 25px;
+      padding: 11px 18px;
       border: none;
-      border-radius: 10px;
-      font-size: 16px;
+      border-radius: 7px;
+      font-size: 13px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       width: 100%;
-      margin-top: 10px;
+      margin-top: 6px;
       position: relative;
       overflow: hidden;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
     }
 
@@ -423,8 +416,8 @@
     .calculate-btn:hover {
       transform: translateY(-2px);
       box-shadow: 
-        0 5px 15px rgba(0, 242, 254, 0.3),
-        0 0 20px rgba(0, 242, 254, 0.15);
+        0 3px 10px rgba(0, 242, 254, 0.3),
+        0 0 12px rgba(0, 242, 254, 0.15);
     }
 
     .calculate-btn:active {
@@ -432,17 +425,17 @@
     }
 
     #result {
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 12px;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 9px;
       background: rgba(0, 10, 20, 0.6);
       border: 1px solid rgba(0, 242, 254, 0.15);
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.05);
-      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.05);
+      font-size: 13px;
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.4;
       opacity: 0;
-      transform: translateY(15px) scale(0.95);
+      transform: translateY(10px) scale(0.95);
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -455,7 +448,7 @@
     @keyframes resultReveal {
       0% {
         opacity: 0;
-        transform: translateY(15px) scale(0.95);
+        transform: translateY(10px) scale(0.95);
       }
       100% {
         opacity: 1;
@@ -464,27 +457,27 @@
     }
 
     .result-title {
-      font-size: 18px;
-      margin-bottom: 15px;
+      font-size: 14px;
+      margin-bottom: 10px;
       color: var(--primary);
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 5px;
     }
 
     .result-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 15px;
+      gap: 8px;
+      margin-bottom: 10px;
     }
 
     .result-card {
       background: rgba(0, 242, 254, 0.08);
-      padding: 15px;
-      border-radius: 10px;
+      padding: 10px;
+      border-radius: 7px;
       border: 1px solid rgba(0, 242, 254, 0.15);
       transition: all 0.3s ease;
     }
@@ -496,25 +489,25 @@
     }
 
     .result-label {
-      font-size: 12px;
+      font-size: 10px;
       color: var(--text-secondary);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       font-weight: 500;
     }
 
     .result-value {
-      font-size: 20px;
+      font-size: 16px;
       color: var(--primary);
       font-weight: 700;
     }
 
     .final-date {
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 10px;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 7px;
       background: var(--gradient-1);
       color: #000;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 700;
       text-align: center;
       animation: dateGlow 2s ease-in-out infinite alternate;
@@ -522,19 +515,19 @@
 
     @keyframes dateGlow {
       from {
-        box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+        box-shadow: 0 0 6px rgba(0, 242, 254, 0.3);
       }
       to {
-        box-shadow: 0 0 18px rgba(0, 242, 254, 0.4), 0 0 25px rgba(0, 242, 254, 0.2);
+        box-shadow: 0 0 12px rgba(0, 242, 254, 0.4), 0 0 16px rgba(0, 242, 254, 0.2);
       }
     }
 
     .error {
       color: var(--error);
       font-weight: 600;
-      margin-top: 8px;
-      padding: 15px;
-      border-radius: 10px;
+      margin-top: 5px;
+      padding: 10px;
+      border-radius: 7px;
       background: rgba(255, 42, 109, 0.08);
       border: 1px solid rgba(255, 42, 109, 0.2);
       animation: errorShake 0.4s ease;
@@ -542,16 +535,16 @@
 
     @keyframes errorShake {
       0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      75% { transform: translateX(4px); }
+      25% { transform: translateX(-2px); }
+      75% { transform: translateX(2px); }
     }
 
     footer {
-      margin-top: 20px;
-      font-size: 12px;
+      margin-top: 14px;
+      font-size: 10px;
       color: var(--text-secondary);
       text-align: center;
-      padding-top: 15px;
+      padding-top: 10px;
       border-top: 1px solid rgba(0, 242, 254, 0.15);
     }
 
@@ -564,27 +557,27 @@
 
     footer a:hover {
       color: var(--secondary);
-      text-shadow: 0 0 6px rgba(255, 42, 109, 0.3);
+      text-shadow: 0 0 4px rgba(255, 42, 109, 0.3);
     }
 
     /* Responsive Design */
     @media (max-width: 480px) {
       .container {
-        padding: 20px;
-        max-width: 340px;
+        padding: 15px;
+        max-width: 300px;
       }
       
       .header-content h1 {
-        font-size: 22px;
+        font-size: 16px;
       }
       
       .result-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 6px;
       }
       
       .result-value {
-        font-size: 18px;
+        font-size: 14px;
       }
     }
   </style>
@@ -641,7 +634,7 @@
     <div id="result"></div>
 
     <footer>
-      Developed with by <a href="https://github.com/mrtan-official" target="_blank">Abu Tanim</a>
+      Developed with ❤️ by <a href="https://github.com/mrtan-official" target="_blank">Abu Tanim</a>
     </footer>
   </div>
 
@@ -649,7 +642,7 @@
     // Create quantum particles
     function createQuantumParticles() {
       const container = document.getElementById('quantumParticles');
-      const particleCount = 25;
+      const particleCount = 18;
       
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -657,8 +650,8 @@
         
         const startX = Math.random() * 100;
         const startY = Math.random() * 100;
-        const endX = startX + (Math.random() - 0.5) * 20;
-        const endY = startY + (Math.random() - 0.5) * 20;
+        const endX = startX + (Math.random() - 0.5) * 12;
+        const endY = startY + (Math.random() - 0.5) * 12;
         
         particle.style.setProperty('--startX', `${startX}vw`);
         particle.style.setProperty('--startY', `${startY}vh`);
@@ -791,4 +784,3 @@
   </script>
 </body>
 </html>
-
