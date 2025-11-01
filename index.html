@@ -56,12 +56,84 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -3;
+      z-index: -4;
       background: 
         radial-gradient(circle at 20% 80%, rgba(0, 242, 254, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(255, 42, 109, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(5, 217, 232, 0.03) 0%, transparent 50%),
         linear-gradient(135deg, #01012b 0%, #011627 50%, #00072d 100%);
+    }
+
+    /* Starry Background */
+    .starry-sky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+    }
+
+    .star {
+      position: absolute;
+      background: #ffffff;
+      border-radius: 50%;
+      animation: twinkle var(--duration) ease-in-out infinite;
+    }
+
+    .star.small {
+      width: 1px;
+      height: 1px;
+    }
+
+    .star.medium {
+      width: 2px;
+      height: 2px;
+    }
+
+    .star.large {
+      width: 3px;
+      height: 3px;
+    }
+
+    .star.glow {
+      box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    /* Shooting Stars */
+    .shooting-star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 6px 2px var(--primary);
+      opacity: 0;
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translateX(0) translateY(0) scale(0.5);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(100vw) translateY(100vh) scale(1.5);
+        opacity: 0;
+      }
     }
 
     /* Simplified Nebula */
@@ -84,19 +156,19 @@
     }
 
     .nebula-cloud:nth-child(1) {
-      width: 100px;
-      height: 100px;
-      top: -15px;
-      left: -15px;
+      width: 120px;
+      height: 120px;
+      top: -20px;
+      left: -20px;
       background: var(--primary);
       animation-duration: 30s;
     }
 
     .nebula-cloud:nth-child(2) {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       top: 60%;
-      right: -10px;
+      right: -15px;
       background: var(--secondary);
       animation-duration: 25s;
       animation-delay: 5s;
@@ -108,7 +180,7 @@
         opacity: 0.1;
       }
       50% {
-        transform: translate(25px, -10px) rotate(180deg) scale(1.05);
+        transform: translate(30px, -15px) rotate(180deg) scale(1.05);
         opacity: 0.2;
       }
     }
@@ -188,15 +260,15 @@
     /* Compact Container */
     .container {
       background: rgba(1, 22, 39, 0.9);
-      padding: 18px;
-      border-radius: 14px;
+      padding: 20px;
+      border-radius: 16px;
       border: 1px solid rgba(0, 242, 254, 0.2);
       box-shadow: 
-        0 0 12px rgba(0, 242, 254, 0.1),
-        0 0 25px rgba(255, 42, 109, 0.05),
+        0 0 15px rgba(0, 242, 254, 0.1),
+        0 0 30px rgba(255, 42, 109, 0.05),
         inset 0 1px 0 rgba(255, 255, 255, 0.08);
       width: 100%;
-      max-width: 320px;
+      max-width: 380px;
       text-align: center;
       position: relative;
       z-index: 1;
@@ -212,7 +284,7 @@
       right: -2px;
       bottom: -2px;
       background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-      border-radius: 16px;
+      border-radius: 20px;
       z-index: -1;
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -225,8 +297,8 @@
     .container:hover {
       transform: translateY(-2px) scale(1.005);
       box-shadow: 
-        0 0 16px rgba(0, 242, 254, 0.15),
-        0 0 35px rgba(255, 42, 109, 0.08),
+        0 0 20px rgba(0, 242, 254, 0.15),
+        0 0 40px rgba(255, 42, 109, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
@@ -234,22 +306,22 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 20px;
       position: relative;
     }
 
     .header::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
+      width: 130px;
       height: 1px;
       background: var(--gradient-1);
       border-radius: 2px;
-      box-shadow: 0 0 3px var(--primary);
+      box-shadow: 0 0 4px var(--primary);
     }
 
     .logo-container {
@@ -261,12 +333,12 @@
 
     .logo-glow {
       position: absolute;
-      width: 48px;
-      height: 48px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       background: var(--gradient-1);
-      filter: blur(8px);
-      opacity: 0.4;
+      filter: blur(10px);
+      opacity: 0.5;
       animation: logoPulse 3s ease-in-out infinite;
     }
 
@@ -282,14 +354,14 @@
     }
 
     .header img {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      border-radius: 60%;
       object-fit: cover;
       border: 2px solid rgba(255, 255, 255, 0.8);
       box-shadow: 
-        0 0 10px var(--primary),
-        0 0 20px rgba(0, 242, 254, 0.15);
+        0 0 12px var(--primary),
+        0 0 25px rgba(0, 242, 254, 0.15);
       transition: all 0.3s ease;
       position: relative;
       z-index: 2;
@@ -298,24 +370,31 @@
     .header img:hover {
       transform: scale(1.03) rotate(2deg);
       box-shadow: 
-        0 0 12px var(--primary),
-        0 0 25px rgba(0, 242, 254, 0.2);
+        0 0 15px var(--primary),
+        0 0 30px rgba(0, 242, 254, 0.2);
     }
 
     .header-content h1 {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 800;
       background: var(--gradient-1);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
-      margin-bottom: 3px;
-      letter-spacing: 0.5px;
+      text-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+      margin-bottom: 4px;
+      letter-spacing: 0.6px;
+    }
+
+    .header-content p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      letter-spacing: 0.3px;
     }
 
     .input-group {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       text-align: left;
     }
 
@@ -323,15 +402,15 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 6px;
-      font-size: 12px;
+      margin-bottom: 8px;
+      font-size: 13px;
       color: var(--text);
       font-weight: 600;
     }
 
     .input-label .material-icons {
       color: var(--primary);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .input-container {
@@ -340,12 +419,12 @@
 
     .input-field {
       width: 100%;
-      padding: 10px 12px 10px 36px;
-      border-radius: 7px;
+      padding: 12px 14px 12px 40px;
+      border-radius: 8px;
       border: 2px solid rgba(0, 242, 254, 0.15);
       background: rgba(0, 10, 20, 0.6);
       color: var(--text);
-      font-size: 12px;
+      font-size: 13px;
       outline: none;
       transition: all 0.3s ease;
       font-family: inherit;
@@ -354,17 +433,17 @@
     .input-field:focus {
       border-color: var(--primary);
       background: rgba(0, 20, 40, 0.7);
-      box-shadow: 0 0 8px rgba(0, 242, 254, 0.2);
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
       transform: translateY(-1px);
     }
 
     .input-icon {
       position: absolute;
-      left: 12px;
+      left: 14px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--primary);
-      font-size: 15px;
+      font-size: 16px;
       transition: all 0.3s ease;
     }
 
@@ -374,27 +453,27 @@
     }
 
     .hint {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-secondary);
-      margin-top: 4px;
+      margin-top: 5px;
       font-style: italic;
     }
 
     .calculate-btn {
       background: var(--gradient-1);
       color: #000;
-      padding: 11px 18px;
+      padding: 12px 16px;
       border: none;
-      border-radius: 7px;
-      font-size: 13px;
+      border-radius: 8px;
+      font-size: 14px;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       width: 100%;
-      margin-top: 6px;
+      margin-top: 8px;
       position: relative;
       overflow: hidden;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
       text-transform: uppercase;
     }
 
@@ -416,8 +495,8 @@
     .calculate-btn:hover {
       transform: translateY(-2px);
       box-shadow: 
-        0 3px 10px rgba(0, 242, 254, 0.3),
-        0 0 12px rgba(0, 242, 254, 0.15);
+        0 4px 12px rgba(0, 242, 254, 0.3),
+        0 0 15px rgba(0, 242, 254, 0.15);
     }
 
     .calculate-btn:active {
@@ -425,17 +504,17 @@
     }
 
     #result {
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 9px;
+      margin-top: 20px;
+      padding: 16px;
+      border-radius: 10px;
       background: rgba(0, 10, 20, 0.6);
       border: 1px solid rgba(0, 242, 254, 0.15);
-      box-shadow: 0 0 10px rgba(0, 242, 254, 0.05);
-      font-size: 13px;
+      box-shadow: 0 0 12px rgba(0, 242, 254, 0.05);
+      font-size: 14px;
       color: var(--text);
       line-height: 1.4;
       opacity: 0;
-      transform: translateY(10px) scale(0.95);
+      transform: translateY(12px) scale(0.95);
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
@@ -448,7 +527,7 @@
     @keyframes resultReveal {
       0% {
         opacity: 0;
-        transform: translateY(10px) scale(0.95);
+        transform: translateY(12px) scale(0.95);
       }
       100% {
         opacity: 1;
@@ -457,27 +536,27 @@
     }
 
     .result-title {
-      font-size: 14px;
-      margin-bottom: 10px;
+      font-size: 16px;
+      margin-bottom: 12px;
       color: var(--primary);
       font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 6px;
     }
 
     .result-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 10px;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .result-card {
       background: rgba(0, 242, 254, 0.08);
-      padding: 10px;
-      border-radius: 7px;
+      padding: 12px;
+      border-radius: 8px;
       border: 1px solid rgba(0, 242, 254, 0.15);
       transition: all 0.3s ease;
     }
@@ -489,25 +568,25 @@
     }
 
     .result-label {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-secondary);
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       font-weight: 500;
     }
 
     .result-value {
-      font-size: 16px;
+      font-size: 18px;
       color: var(--primary);
       font-weight: 700;
     }
 
     .final-date {
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 7px;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 8px;
       background: var(--gradient-1);
       color: #000;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       text-align: center;
       animation: dateGlow 2s ease-in-out infinite alternate;
@@ -515,19 +594,19 @@
 
     @keyframes dateGlow {
       from {
-        box-shadow: 0 0 6px rgba(0, 242, 254, 0.3);
+        box-shadow: 0 0 8px rgba(0, 242, 254, 0.3);
       }
       to {
-        box-shadow: 0 0 12px rgba(0, 242, 254, 0.4), 0 0 16px rgba(0, 242, 254, 0.2);
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.4), 0 0 20px rgba(0, 242, 254, 0.2);
       }
     }
 
     .error {
       color: var(--error);
       font-weight: 600;
-      margin-top: 5px;
-      padding: 10px;
-      border-radius: 7px;
+      margin-top: 6px;
+      padding: 12px;
+      border-radius: 8px;
       background: rgba(255, 42, 109, 0.08);
       border: 1px solid rgba(255, 42, 109, 0.2);
       animation: errorShake 0.4s ease;
@@ -535,16 +614,16 @@
 
     @keyframes errorShake {
       0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-2px); }
-      75% { transform: translateX(2px); }
+      25% { transform: translateX(-3px); }
+      75% { transform: translateX(3px); }
     }
 
     footer {
-      margin-top: 14px;
-      font-size: 10px;
+      margin-top: 16px;
+      font-size: 11px;
       color: var(--text-secondary);
       text-align: center;
-      padding-top: 10px;
+      padding-top: 12px;
       border-top: 1px solid rgba(0, 242, 254, 0.15);
     }
 
@@ -557,33 +636,34 @@
 
     footer a:hover {
       color: var(--secondary);
-      text-shadow: 0 0 4px rgba(255, 42, 109, 0.3);
+      text-shadow: 0 0 5px rgba(255, 42, 109, 0.3);
     }
 
     /* Responsive Design */
     @media (max-width: 480px) {
       .container {
-        padding: 15px;
+        padding: 16px;
         max-width: 300px;
       }
       
       .header-content h1 {
-        font-size: 16px;
+        font-size: 18px;
       }
       
       .result-grid {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 8px;
       }
       
       .result-value {
-        font-size: 14px;
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
   <div class="cosmic-bg"></div>
+  <div class="starry-sky" id="starrySky"></div>
   <div class="nebula">
     <div class="nebula-cloud"></div>
     <div class="nebula-cloud"></div>
@@ -595,7 +675,7 @@
     <div class="header">
       <div class="logo-container">
         <div class="logo-glow"></div>
-        <img src="https://i.postimg.cc/1zkqjC1k/mrtan.png" alt="Previous Date Count">
+        <img src="https://i.postimg.cc/1zkqjC1k/mrtan.png" alt="Previous Date Count"> 
       </div>
       <div class="header-content">
         <h1>Previous Date Count</h1>
@@ -634,15 +714,78 @@
     <div id="result"></div>
 
     <footer>
-      Developed with ❤️ by <a href="https://github.com/mrtan-official" target="_blank">Abu Tanim</a>
+      Developed with by <a href="https://github.com/mrtan-official" target="_blank">Abu Tanim</a>
     </footer>
   </div>
 
   <script>
+    // Create starry background
+    function createStarrySky() {
+      const container = document.getElementById('starrySky');
+      const starCount = 150;
+      
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        
+        // Random star size
+        const sizes = ['small', 'medium', 'large'];
+        const size = sizes[Math.floor(Math.random() * sizes.length)];
+        star.className = `star ${size}`;
+        
+        // Random position
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        
+        // Random twinkle duration
+        const duration = 3 + Math.random() * 7;
+        star.style.setProperty('--duration', `${duration}s`);
+        
+        // Random delay
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        
+        // Some stars have glow
+        if (Math.random() > 0.7) {
+          star.classList.add('glow');
+        }
+        
+        container.appendChild(star);
+      }
+      
+      // Create shooting stars
+      createShootingStars();
+    }
+    
+    // Create shooting stars
+    function createShootingStars() {
+      const container = document.getElementById('starrySky');
+      
+      setInterval(() => {
+        if (Math.random() > 0.7) { // 30% chance to create a shooting star
+          const shootingStar = document.createElement('div');
+          shootingStar.className = 'shooting-star';
+          
+          // Random starting position from top
+          shootingStar.style.left = `${Math.random() * 30}%`;
+          shootingStar.style.top = `${Math.random() * 20}%`;
+          
+          // Random duration
+          const duration = 1 + Math.random() * 2;
+          shootingStar.style.animation = `shoot ${duration}s linear`;
+          
+          container.appendChild(shootingStar);
+          
+          // Remove after animation
+          setTimeout(() => {
+            shootingStar.remove();
+          }, duration * 1000);
+        }
+      }, 2000);
+    }
+
     // Create quantum particles
     function createQuantumParticles() {
       const container = document.getElementById('quantumParticles');
-      const particleCount = 18;
+      const particleCount = 20;
       
       for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -650,8 +793,8 @@
         
         const startX = Math.random() * 100;
         const startY = Math.random() * 100;
-        const endX = startX + (Math.random() - 0.5) * 12;
-        const endY = startY + (Math.random() - 0.5) * 12;
+        const endX = startX + (Math.random() - 0.5) * 15;
+        const endY = startY + (Math.random() - 0.5) * 15;
         
         particle.style.setProperty('--startX', `${startX}vw`);
         particle.style.setProperty('--startY', `${startY}vh`);
@@ -778,6 +921,7 @@
 
     // Initialize when page loads
     window.onload = function() {
+      createStarrySky();
       createQuantumParticles();
       document.getElementById('dateInput').focus();
     };
